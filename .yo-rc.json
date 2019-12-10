@@ -1,0 +1,26 @@
+{
+  "generator-ngx-rocket": {
+    "version": "7.1.0",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "appName": "ClientFrontend",
+      "target": ["web"],
+      "pwa": false,
+      "ui": "ionic",
+      "layout": "tabs",
+      "auth": false,
+      "lazy": false,
+      "angulartics": false,
+      "tools": ["prettier"],
+      "utility": ["lodash"],
+      "projectName": "client-frontend",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}
