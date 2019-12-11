@@ -14,12 +14,16 @@ export class ConcentratingHubServiceService {
     socket.on('connect', () => {
       this.connected.next(true);
     });
-    socket.on('event', (e: object) => {
-      this.lastEvent.next(new HubMessage(e));
-    });
     socket.on('disconnect', () => {
       this.connected.next(false);
       this.lastEvent.next(null);
+    });
+    this.connected.subscribe(s => {
+      if (s) {
+        socket.on('event', (e: object) => {
+          this.lastEvent.next(new HubMessage(e));
+        });
+      }
     });
   }
 }

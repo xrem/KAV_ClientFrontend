@@ -12,6 +12,8 @@
     <ion-card-content>
       <app-loader [isLoading]="isEstablishingConnection"></app-loader>
       <h1>{{ status }}</h1>
+      <h2>Холодильник:{{ freezerStatus }}</h2>
+      <h2>Терминал:{{ terminalStatus }}</h2>
     </ion-card-content>
   </ion-card>
 </ion-content>
