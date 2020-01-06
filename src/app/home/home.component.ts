@@ -8,15 +8,17 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterContentInit {
-  status: string;
+  public status = 'Запуск...';
   terminalStatus: string;
   freezerStatus: string;
   isEstablishingConnection = true;
   connectedAtLeastOnce = false;
+  working = false;
 
   constructor(private readonly hub: ConcentratingHubServiceService) {
     this.freezerStatus = 'Нет данных';
     this.terminalStatus = 'Нет данных';
+    setInterval(() => (this.working = !this.working), 8000);
   }
 
   ngAfterContentInit(): void {
@@ -32,7 +34,9 @@ export class HomeComponent implements AfterContentInit {
         }
         this.status = `[${dateToTimeString(event.timestamp)}]`;
       } else {
-        this.status = 'Ожидание...';
+        if (this.connectedAtLeastOnce) {
+          this.status = 'Пытаюсь решить проблему с установкой связи...';
+        }
       }
     });
   }

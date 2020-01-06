@@ -1,19 +1,26 @@
+<app-intro-slider *ngIf="!working"></app-intro-slider>
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title><span translate>KAV Vending</span></ion-title>
+    <ion-title>
+      <div *ngIf="!connectedAtLeastOnce || isEstablishingConnection || !working">
+        <app-loader [isLoading]="true"></app-loader>
+        <span>{{ status }}</span>
+      </div>
+      <span *ngIf="connectedAtLeastOnce && !isEstablishingConnection && working">{{ status }}</span>
+    </ion-title>
   </ion-toolbar>
-  <ion-progress-bar type="indeterminate" color="secondary" [hidden]="!isEstablishingConnection"></ion-progress-bar>
+  <ion-progress-bar type="indeterminate" color="secondary" *ngIf="isEstablishingConnection"></ion-progress-bar>
 </ion-header>
-<ion-content>
+<ion-content *ngIf="working">
   <ion-card text-center>
     <ion-card-content>
-      <app-loader [isLoading]="isEstablishingConnection"></app-loader>
       <h1>{{ status }}</h1>
       <h2>Холодильник:{{ freezerStatus }}</h2>
       <h2>Терминал:{{ terminalStatus }}</h2>
+      <br />
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -7,3 +7,21 @@ q {
   font-style: italic;
   quotes: "« " " »";
 }
+
+app-loader {
+  display: inline-block;
+}
+
+ion-title {
+  margin-top: 5px;
+}
+
+ion-title > div {
+  height: 36px;
+}
+
+ion-title > div > span {
+  position: relative;
+  top: -5px;
+  padding-left: 8px;
+}

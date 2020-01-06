@@ -16,5 +16,7 @@ export const environment = {
   concentratingHub: {
     namespace: 'debug',
     host: 'localhost:3000'
-  }
+  },
+  framesAvailable: 8,
+  framesPath: '/assets/frames'
 };
