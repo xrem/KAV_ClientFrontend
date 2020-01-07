@@ -18,7 +18,7 @@ export class HomeComponent implements AfterContentInit {
   constructor(private readonly hub: ConcentratingHubServiceService) {
     this.freezerStatus = 'Нет данных';
     this.terminalStatus = 'Нет данных';
-    setInterval(() => (this.working = !this.working), 8000);
+    // setInterval(() => (this.working = !this.working), 8000);
   }
 
   ngAfterContentInit(): void {

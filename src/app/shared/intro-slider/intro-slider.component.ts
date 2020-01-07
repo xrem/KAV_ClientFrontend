@@ -81,8 +81,9 @@ export class IntroSliderComponent implements AfterViewInit {
     const path = environment.framesPath;
     const framesAvailable = environment.framesAvailable;
     for (let i = 1; i <= framesAvailable; i++) {
-      this.imgPaths.push(`${path}/${i}.jpg`);
+      this.imgPaths.push(`${path}/${i}.png`);
     }
+    this.imgPaths.push(`${path}/pick.gif`);
   }
 
   ngAfterViewInit(): void {
