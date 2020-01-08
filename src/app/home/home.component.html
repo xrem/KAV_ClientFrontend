@@ -1,4 +1,4 @@
-<app-intro-slider *ngIf="showIntro" [smaller]="status !== null"></app-intro-slider>
+<app-intro-slider *ngIf="this.showIntro" [smaller]="status !== null"></app-intro-slider>
 <ion-header *ngIf="status !== null">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -14,6 +14,6 @@
   </ion-toolbar>
   <ion-progress-bar type="indeterminate" color="secondary" *ngIf="isEstablishingConnection"></ion-progress-bar>
 </ion-header>
-<ion-content *ngIf="!showIntro" [ngClass]="status !== null ? 'smaller' : undefined">
+<ion-content *ngIf="!this.showIntro" [ngClass]="status !== null ? 'smaller' : undefined">
   <ion-img [src]="screenSrc"></ion-img>
 </ion-content>

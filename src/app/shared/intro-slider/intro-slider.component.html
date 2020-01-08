@@ -1,5 +1,5 @@
-<ion-slides [options]="slideOpts" #introSlider>
-  <ng-template let-item ngFor [ngForOf]="imgPaths">
+<ion-slides [options]="this.slideOpts" #introSlider>
+  <ng-template let-item ngFor [ngForOf]="this.imgPaths">
     <ion-slide>
       <ion-img src="{{ item }}" [ngClass]="smaller ? 'smaller' : undefined"></ion-img>
     </ion-slide>

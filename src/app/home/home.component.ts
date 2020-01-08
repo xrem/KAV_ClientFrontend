@@ -28,14 +28,14 @@ export class HomeComponent implements AfterContentInit {
     });
   }
 
-  private get screenSrc(): string | undefined {
+  public get screenSrc(): string | undefined {
     if (this.screen) {
       return `/assets/${this.screen}.gif`;
     }
     return undefined;
   }
 
-  private get showIntro(): boolean {
+  public get showIntro(): boolean {
     return this.screen === null;
   }
 

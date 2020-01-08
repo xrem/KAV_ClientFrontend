@@ -12,7 +12,7 @@ export class IntroSliderComponent implements AfterViewInit {
   @Input()
   public smaller = false;
 
-  private readonly slideOpts: object = {
+  readonly slideOpts: object = {
     on: {
       beforeInit() {
         const swiper = this;
@@ -78,7 +78,7 @@ export class IntroSliderComponent implements AfterViewInit {
       }
     }
   };
-  private readonly imgPaths: string[] = [];
+  readonly imgPaths: string[] = [];
 
   constructor() {
     const path = environment.framesPath;
