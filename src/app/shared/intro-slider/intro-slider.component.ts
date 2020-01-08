@@ -76,6 +76,9 @@ export class IntroSliderComponent implements AfterViewInit {
           });
         }
       }
+    },
+    autoplay: {
+      delay: 5000
     }
   };
   readonly imgPaths: string[] = [];
