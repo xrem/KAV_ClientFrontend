@@ -21,7 +21,7 @@ export const environment = {
     namespace: 'debug',
     host: 'localhost:3000'
   },
-  framesAvailable: 8,
+  framesAvailable: 7,
   framesPath: '/assets/frames'
 };
 
