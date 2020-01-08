@@ -25,3 +25,18 @@ ion-title > div > span {
   top: -5px;
   padding-left: 8px;
 }
+
+ion-content {
+  --overflow: hidden;
+
+  height: 100vh;
+
+  ion-img {
+    height: 100%;
+  }
+}
+
+//noinspection Stylelint
+ion-content.smaller {
+  height: calc(100vh - 57px);
+}

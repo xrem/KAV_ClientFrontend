@@ -4,5 +4,10 @@ ion-slide {
 }
 
 ion-img {
+  height: 100vh;
+}
+
+//noinspection Stylelint
+ion-img.smaller {
   height: calc(100vh - 56px);
 }

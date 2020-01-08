@@ -1,26 +1,19 @@
-<app-intro-slider *ngIf="!working"></app-intro-slider>
-<ion-header>
+<app-intro-slider *ngIf="showIntro" [smaller]="status !== null"></app-intro-slider>
+<ion-header *ngIf="status !== null">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      <div *ngIf="!connectedAtLeastOnce || isEstablishingConnection || !working">
+      <div *ngIf="showWorkingSpinnerInStatus">
         <app-loader [isLoading]="true"></app-loader>
         <span>{{ status }}</span>
       </div>
-      <span *ngIf="connectedAtLeastOnce && !isEstablishingConnection && working">{{ status }}</span>
+      <span *ngIf="!showWorkingSpinnerInStatus">{{ status }}</span>
     </ion-title>
   </ion-toolbar>
   <ion-progress-bar type="indeterminate" color="secondary" *ngIf="isEstablishingConnection"></ion-progress-bar>
 </ion-header>
-<ion-content *ngIf="working">
-  <ion-card text-center>
-    <ion-card-content>
-      <h1>{{ status }}</h1>
-      <h2>Холодильник:{{ freezerStatus }}</h2>
-      <h2>Терминал:{{ terminalStatus }}</h2>
-      <br />
-    </ion-card-content>
-  </ion-card>
+<ion-content *ngIf="!showIntro" [ngClass]="status !== null ? 'smaller' : undefined">
+  <ion-img [src]="screenSrc"></ion-img>
 </ion-content>

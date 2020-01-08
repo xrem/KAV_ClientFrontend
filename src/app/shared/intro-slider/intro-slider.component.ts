@@ -9,6 +9,9 @@ import { environment } from '@env/environment';
 })
 export class IntroSliderComponent implements AfterViewInit {
   @ViewChild('introSlider', { static: false }) slider: IonSlides;
+  @Input()
+  public smaller = false;
+
   private readonly slideOpts: object = {
     on: {
       beforeInit() {
